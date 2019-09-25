@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from flask import Flask, jsonify
+import os
 
 
 
@@ -126,7 +127,8 @@ def get_Api_search(arg):
 
 
 
-
+port = int(os.environ.get('PORT', 5000))
 
 if __name__== '__main__':
-    app.run()
+
+    app.run(host='127.0.0.1', port=port)
