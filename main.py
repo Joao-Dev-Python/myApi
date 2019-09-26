@@ -10,84 +10,84 @@ app = Flask(__name__)
 
 my_Api = [
     {
-        'name' : 'Joao',
-        'idade' : 25,
-        'tipo' : 'pessoa'
+        'vaga' : 'Pedeiro',
+        'descricao_brev' : 'trabalhar muito fazer obras de arte e nao receber valor merecido',
+        'descricao_com' : 'Trabalhar de domingo a domingo ate Morrer'
     },
     {
-        'name' : 'Ricardo',
-        'idade' : 30,
-        'tipo' : 'pessoa'
+        'vaga' : 'Auxiliar',
+        'descricao_brev' : 'quenm mais trabalha e menos recebe',
+        'descricao_com' : 'Trabalhar de domingo a domingo ate Morrer'
     },
     {
-        'name' : 'Ana',
-        'idade' : 25,
-        'tipo' : 'pessoa'
+        'vaga' : 'Gerente',
+        'descricao_brev' : 'so de buenas mandando em tudo',
+        'descricao_com' : 'Trabalhar de domingo a domingo ate Morrer'
     },
     {
-        'name' : 'Paulo',
-        'idade' : 26,
-        'tipo' : 'pessoa'
+        'vaga' : 'almoxerife',
+        'descricao_brev' : 'ficar de boa entregando equipamentos e ferramentas',
+        'descricao_com' : 'Trabalhar de domingo a domingo ate Morrer'
     },
     {
-        'name' : 'Daniel',
-        'idade' : 13,
-        'tipo' : 'pessoa'
+        'vaga' : 'Encarregado de obra',
+        'descricao_brev' :'puchar um saco do supervisor e engenheiro',
+        'descricao_com' : 'Trabalhar de domingo a domingo ate Morrer'
     },
     {
-        'name' : 'GAbriela',
-        'idade' : 17,
-        'tipo' : 'pessoa'
+        'vaga' : 'Gestor de producao',
+        'descricao_brev' : 'ficar de boa vendo os outros trabalhar o dia todo',
+        'descricao_com' : 'Trabalhar de domingo a domingo ate Morrer'
     },
     {
-        'name' : 'Karol',
-        'idade' : 21,
-        'tipo' : 'pessoa'
+        'vaga' : 'Moto boy',
+        'descricao_brev' : 'da uns role',
+        'descricao_com' : 'Trabalhar de domingo a domingo ate Morrer'
     },
     {
-        'name' : 'Julio',
-        'idade' : 33,
-        'tipo' : 'pessoa'
+        'vaga' : 'Motorista',
+        'descricao_brev' :'dirigir onibus',
+        'descricao_com' : 'Trabalhar de domingo a domingo ate Morrer'
     },
     {
-        'name' : 'Vaca',
-        'idade' : 5,
-        'tipo' : 'animal'
+        'vaga' : 'Soldaor',
+        'descricao_brev' : 'solda nos 3 processos ',
+        'descricao_com' : 'Trabalhar de domingo a domingo ate Morrer'
     },
     {
-        'name' : 'Ovelha',
-        'idade' : 3,
-        'tipo' : 'animal'
+        'vaga' : 'Caldereiro',
+        'descricao_brev' : 'cortar tubulacoes',
+        'descricao_com' : 'Trabalhar de domingo a domingo ate Morrer'
     },
     {
-        'name' : 'Cadela',
-        'idade' : 2,
-        'tipo' : 'animal'
+        'vaga' : 'Ispetor de Qualidade',
+        'descricao_brev' : 'verificar sevicos',
+        'descricao_com' : 'Trabalhar de domingo a domingo ate Morrer'
     },
     {
-        'name' : 'Passáro',
-        'idade' : 6,
-        'tipo' : 'animal'
+        'vaga' : 'Operador de Guidaste',
+        'descricao_brev' : 'levantar peso',
+        'descricao_com' : 'Trabalhar de domingo a domingo ate Morrer'
     },
     {
-        'name' : 'Tartaruga',
-        'idade' : 13,
-        'tipo' : 'animal'
+        'vaga' : 'Proxtibuider',
+        'descricao_brev' : 'pegar altas negas',
+        'descricao_com' : 'Trabalhar de domingo a domingo ate Morrer'
     },
     {
-        'name' : 'Coala',
-        'idade' : 1,
-        'tipo' : 'animal'
+        'vaga' : 'Garcon',
+        'descricao_brev' : 'servir clientes',
+        'descricao_com' : 'Trabalhar de domingo a domingo ate Morrer'
     },
     {
-        'name' : 'Girafa',
-        'idade' : 4,
-        'tipo' : 'animal'
+        'vaga' : 'Cobrador',
+        'descricao_brev' : 'Trabalhar com dinheiro que nao e seu',
+        'descricao_com' : 'Trabalhar de domingo a domingo ate Morrer'
     },
     {
-        'name' : 'Macaco',
-        'idade' : 7,
-        'tipo' : 'animal'
+        'vaga' : 'Operador de Caixa',
+        'descricao_brev' : 'Trabalhar pra casete',
+        'descricao_com' : 'Trabalhar de domingo a domingo ate Morrer'
     },
 
 
@@ -107,12 +107,12 @@ def get_Api():
 @app.route('/<string:arg>',methods = ['GET'])
 def get_Api_search(arg):
 
-    search = [i for i in my_Api if i['tipo'] == 'pessoa' ]
-    x = [i for i in my_Api if i['tipo'] == 'animal' ]
+    search = [i for i in my_Api if i['descricao_com'] == 'Trabalhar de domingo a domingo ate Morrer' ]
+    x = [i for i in my_Api if i['descricao_com'] == 'Trabalhar de domingo a domingo ate Morrer' ]
 
-    if arg == 'pessoa':
+    if arg == 'Trabalhar de domingo a domingo ate Morrer':
         return jsonify(search)
-    elif arg == 'animal':
+    elif arg == 'Trabalhar de domingo a domingo ate Morrer':
         return jsonify(x)
     else :
         return jsonify([{'Error' : "Not Faund !!!"}])
